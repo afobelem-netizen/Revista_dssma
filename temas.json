@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "titulo": "Checklist: Primeiro Passo Seguro",
+    "icone": "fas fa-hard-hat",
+    "categoria": "Segurança",
+    "badgeClass": "badge-seguranca",
+    "conteudo": "Antes de iniciar qualquer atividade, o checklist é a garantia de que tudo está em ordem. Não é só papel — é proteção. Faça com atenção, não com pressa. Quem faz por consciência cuida de todos.",
+    "pergunta": "Cite uma situação em que o checklist pode evitar um acidente. Compartilhe!"
+  },
+  {
+    "id": 2,
+    "titulo": "Áreas de Risco: Sinalizar é Proteger",
+    "icone": "fas fa-hard-hat",
+    "categoria": "Segurança",
+    "badgeClass": "badge-seguranca",
+    "conteudo": "Placas, cones e faixas não são enfeites. São avisos que salvam vidas. Se vir uma área sem sinalização, comunique. Respeitar a sinalização é respeitar a vida.",
+    "pergunta": "Já identificou uma área mal sinalizada? Como agiu?"
+  },
+  {
+    "id": 3,
+    "titulo": "PGU: Trabalho Coletivo com Segurança",
+    "icone": "fas fa-hard-hat",
+    "categoria": "Segurança",
+    "badgeClass": "badge-seguranca",
+    "conteudo": "Na PGU, o risco aumenta. Saber o que fazer, seguir permissões de trabalho e manter o foco são essenciais. O sucesso não é só concluir o serviço — é todos voltarem para casa sem incidentes.",
+    "pergunta": "O que você faz para manter o foco durante uma PGU?"
+  },
+  {
+    "id": 4,
+    "titulo": "Transportadores de Correia: Atenção Total",
+    "icone": "fas fa-hard-hat",
+    "categoria": "Segurança",
+    "badgeClass": "badge-seguranca",
+    "conteudo": "Equipamento em movimento é perigo constante. Nunca faça limpeza ou ajustes com ele ligado. Bloqueie, sinalize e só então atue. Uma vibração diferente pode ser um alerta — ouça-o.",
+    "pergunta": "Qual o maior risco ao operar correias? Como evitá-lo?"
+  },
+  {
+    "id": 5,
+    "titulo": "Pontos de Nip: Distância é Vida",
+    "icone": "fas fa-hard-hat",
+    "categoria": "Segurança",
+    "badgeClass": "badge-seguranca",
+    "conteudo": "Locais de esmagamento e aprisionamento exigem respeito. Nunca aproxime mãos ou ferramentas. Proteções devem estar sempre intactas. Reporte qualquer falha — um minuto pode salvar uma vida.",
+    "pergunta": "Como você se certifica de que as proteções estão intactas?"
+  },
+  {
+    "id": 6,
+    "titulo": "EPI: Seu Escudo Diário",
+    "icone": "fas fa-hard-hat",
+    "categoria": "Segurança",
+    "badgeClass": "badge-seguranca",
+    "conteudo": "Capacete, luvas, óculos, botas… Cada um tem uma função. Usar EPI não é só regra — é escolha de proteção. Verifique o estado, substitua se danificado. Quem se protege, cuida de quem ama.",
+    "pergunta": "Qual EPI já te protegeu de um incidente? Conte sua experiência."
+  },
+  {
+    "id": 7,
+    "titulo": "Comunicação Clara, Risco Zero",
+    "icone": "fas fa-hard-hat",
+    "categoria": "Segurança",
+    "badgeClass": "badge-seguranca",
+    "conteudo": "Entre campo e sala de controle, a comunicação deve ser clara e confirmada. Evite 'achismos'. Um dado mal passado pode gerar uma cadeia de falhas. Comunique com detalhes e confirme.",
+    "pergunta": "Como você garante que sua mensagem foi entendida?"
+  },
+  {
+    "id": 8,
+    "titulo": "Bloqueio que Salva",
+    "icone": "fas fa-hard-hat",
+    "categoria": "Segurança",
+    "badgeClass": "badge-seguranca",
+    "conteudo": "Nunca ignore o procedimento de bloqueio e etiquetagem. Isolar fontes de energia antes de atuar é fundamental. Pressa aqui pode custar caro. Segurança não se negocia.",
+    "pergunta": "Por que nunca devemos retirar um bloqueio que não é nosso?"
+  },
+  {
+    "id": 9,
+    "titulo": "Teste Funcional: Última Verificação",
+    "icone": "fas fa-hard-hat",
+    "categoria": "Segurança",
+    "badgeClass": "badge-seguranca",
+    "conteudo": "Liberar um equipamento sem teste é arriscar vidas e patrimônio. Siga o checklist pós-manutenção e valide com a equipe. Testar é prevenir.",
+    "pergunta": "Quem deve participar do teste funcional? Por quê?"
+  },
+  {
+    "id": 10,
+    "titulo": "Operação e Manutenção: Unidos pela Segurança",
+    "icone": "fas fa-hard-hat",
+    "categoria": "Segurança",
+    "badgeClass": "badge-seguranca",
+    "conteudo": "Trabalhar em equipe é compartilhar conhecimento. O operador conhece o comportamento do equipamento; o mantenedor entende sua estrutura. União gera segurança e eficiência.",
+    "pergunta": "Como melhorar a comunicação entre operação e manutenção?"
+  },
+  {
+    "id": 11,
+    "titulo": "Limpeza e Organização: Profissionalismo em Ação",
+    "icone": "fas fa-leaf",
+    "categoria": "Ambiente",
+    "badgeClass": "badge-ambiente",
+    "conteudo": "Área limpa é área segura. Antes e depois do serviço, organize ferramentas, retire sobras e comunique. Organização reflete respeito pelo trabalho e pelos colegas.",
+    "pergunta": "Como a desorganização pode causar um acidente?"
+  },
+  {
+    "id": 12,
+    "titulo": "Inspeções Preventivas: Pequenos Sinais",
+    "icone": "fas fa-leaf",
+    "categoria": "Ambiente",
+    "badgeClass": "badge-ambiente",
+    "conteudo": "Ruídos, vibrações, vazamentos… O equipamento fala. Ouvi-lo pode evitar paradas e acidentes. Registrar anomalias é cuidar do amanhã.",
+    "pergunta": "Qual foi a última anomalia que você identificou e comunicou?"
+  },
+  {
+    "id": 13,
+    "titulo": "Descarte Correto: Respeito Ambiental",
+    "icone": "fas fa-leaf",
+    "categoria": "Ambiente",
+    "badgeClass": "badge-ambiente",
+    "conteudo": "Óleos, panos contaminados e filtros têm destino certo. Descarte no local adequado e ajude a preservar o meio ambiente. Sustentabilidade é responsabilidade de todos.",
+    "pergunta": "O que acontece se descartarmos resíduos oleosos no local errado?"
+  },
+  {
+    "id": 14,
+    "titulo": "Vazamentos: Contenção Imediata",
+    "icone": "fas fa-leaf",
+    "categoria": "Ambiente",
+    "badgeClass": "badge-ambiente",
+    "conteudo": "Um vazamento mínimo hoje pode virar um desastre amanhã. Identifique, comunique e contenha. Cada um de nós é guardião da segurança ambiental.",
+    "pergunta": "Você sabe onde estão os kits de contenção? Já precisou usar?"
+  },
+  {
+    "id": 15,
+    "titulo": "Economia de Água e Energia",
+    "icone": "fas fa-leaf",
+    "categoria": "Ambiente",
+    "badgeClass": "badge-ambiente",
+    "conteudo": "Na mineração, água é recurso precioso. Evite desperdícios, feche válvulas, reporte falhas. Pequenos gestos geram grandes impactos.",
+    "pergunta": "Como podemos reduzir o consumo de água no nosso setor?"
+  },
+  {
+    "id": 16,
+    "titulo": "Comunicação Não Violenta",
+    "icone": "fas fa-users",
+    "categoria": "Comportamento",
+    "badgeClass": "badge-comportamento",
+    "conteudo": "Falar com respeito, ouvir com atenção e construir pontes em vez de muros. Um ambiente saudável é um ambiente seguro. Cuidar das palavras é cuidar das pessoas.",
+    "pergunta": "Como você lida com um conflito no trabalho?"
+  },
+  {
+    "id": 17,
+    "titulo": "Comportamento Inseguro: Como Agir",
+    "icone": "fas fa-users",
+    "categoria": "Comportamento",
+    "badgeClass": "badge-comportamento",
+    "conteudo": "Ver algo errado e não agir é compactuar com o risco. Aborde com respeito, explique o porquê. Segurança é responsabilidade coletiva.",
+    "pergunta": "Como você corrige um colega sem criar conflito?"
+  },
+  {
+    "id": 18,
+    "titulo": "Liderança que Inspira",
+    "icone": "fas fa-users",
+    "categoria": "Comportamento",
+    "badgeClass": "badge-comportamento",
+    "conteudo": "Líder é exemplo. Cumprir procedimentos, usar EPI e respeitar normas inspira a equipe. Coerência entre o que se fala e o que se faz constrói cultura.",
+    "pergunta": "Qual atitude de um líder já te motivou a trabalhar com mais segurança?"
+  },
+  {
+    "id": 19,
+    "titulo": "Cuidar de Si e do Colega",
+    "icone": "fas fa-users",
+    "categoria": "Comportamento",
+    "badgeClass": "badge-comportamento",
+    "conteudo": "Na mineração, ninguém trabalha sozinho. Observar, ajudar e corrigir com respeito são atitudes que fortalecem a segurança coletiva.",
+    "pergunta": "Quando um colega te alertou sobre um risco, como você reagiu?"
+  },
+  {
+    "id": 20,
+    "titulo": "Saúde Mental no Trabalho",
+    "icone": "fas fa-users",
+    "categoria": "Comportamento",
+    "badgeClass": "badge-comportamento",
+    "conteudo": "Cansaço, estresse e pressão afetam a segurança. Descanse, cuide dos hábitos e converse quando precisar. Mente saudável, operação segura.",
+    "pergunta": "O que você faz para aliviar o estresse no trabalho?"
+  }
+]
