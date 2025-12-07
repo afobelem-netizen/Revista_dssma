@@ -1,1184 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Revista DSSMA | Saúde, Segurança e Meio Ambiente</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* RESET SIMPLES */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            -webkit-text-size-adjust: 100%;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { -webkit-text-size-adjust:100%; -webkit-tap-highlight-color:transparent; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #F2F2F2;
-            color: #333;
-            line-height: 1.6;
-            padding: 10px;
+            background:#F2F2F2; color:#333; line-height:1.6; padding:10px;
         }
-        
-        /* CONTAINER */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
+        .container { max-width:800px; margin:0 auto; }
+
         /* CAPA */
         .capa {
             background: linear-gradient(135deg, #378C8C 0%, #3A8C84 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 30px 20px;
-            text-align: center;
-            margin-bottom: 20px;
+            color:white; border-radius:15px; padding:30px 20px; text-align:center; margin-bottom:20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        
-        .capa h1 {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-        }
-        
-        .capa p {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 15px;
-        }
-        
-        .capa-icon {
-            font-size: 3rem;
-            margin: 15px 0;
-        }
-        
+        .capa h1 { font-size:1.6rem; margin-bottom:10px; }
+        .capa p { font-size:1rem; opacity:0.9; margin-bottom:15px; }
+        .capa-icon { font-size:3rem; margin:15px 0; }
+
         /* ÍNDICE */
-        .indice {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        
-        .indice h2 {
-            color: #378C8C;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
-        .indice-lista {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
+        .indice { background:white; border-radius:15px; padding:20px; margin-bottom:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+        .indice h2 { color:#378C8C; margin-bottom:15px; font-size:1.3rem; }
+        .indice-lista { display:flex; flex-direction:column; gap:10px; }
         .indice-item {
-            display: block;
-            padding: 15px;
-            background: rgba(55, 140, 140, 0.08);
-            border-radius: 10px;
-            border-left: 4px solid #378C8C;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.2s;
+            display:block; padding:15px; background:rgba(55,140,140,0.08); border-radius:10px;
+            border-left:4px solid #378C8C; text-decoration:none; color:#333; transition:all .2s;
         }
-        
-        .indice-item:active {
-            background: rgba(55, 140, 140, 0.15);
-            transform: scale(0.98);
-        }
-        
-        .indice-numero {
-            font-weight: bold;
-            color: #378C8C;
-            font-size: 1rem;
-        }
-        
+        .indice-item:hover { transform: translateY(-3px); }
+        .indice-numero { font-weight:bold; color:#378C8C; font-size:1rem; }
+
         /* PÁGINAS */
-        .pagina {
-            background: white;
-            border-radius: 15px;
-            padding: 25px 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border-top: 5px solid #378C8C;
-            position: relative;
-        }
-        
-        .pagina-ambiente {
-            border-top-color: #2E7D5F;
-        }
-        
-        .pagina-comportamento {
-            border-top-color: #D45A2E;
-        }
-        
-        .pagina-numero {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #378C8C;
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-        
-        .pagina-titulo {
-            color: #378C8C;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            padding-right: 50px;
-        }
-        
-        .pagina-ambiente .pagina-titulo {
-            color: #2E7D5F;
-        }
-        
-        .pagina-comportamento .pagina-titulo {
-            color: #D45A2E;
-        }
-        
-        .pagina-conteudo {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #444;
-            margin-bottom: 20px;
-        }
-        
+        .pagina { background:white; border-radius:15px; padding:25px 20px; margin-bottom:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-top:5px solid #378C8C; position:relative; }
+        .pagina-ambiente { border-top-color:#2E7D5F; }
+        .pagina-comportamento { border-top-color:#D45A2E; }
+        .pagina-numero { position:absolute; top:15px; right:15px; background:#378C8C; color:white; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1rem; }
+        .pagina-titulo { color:#378C8C; font-size:1.2rem; font-weight:600; margin-bottom:15px; padding-right:50px; }
+        .pagina-ambiente .pagina-titulo { color:#2E7D5F; }
+        .pagina-comportamento .pagina-titulo { color:#D45A2E; }
+        .pagina-conteudo { font-size:1.05rem; line-height:1.7; color:#444; margin-bottom:20px; }
+
         /* PERGUNTA */
-        .pergunta {
-            background: rgba(55, 140, 140, 0.08);
-            border-left: 4px solid #378C8C;
-            padding: 15px;
-            border-radius: 0 10px 10px 0;
-            margin-top: 20px;
-        }
-        
-        .pergunta-titulo {
-            color: #378C8C;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-        
-        .pergunta-texto {
-            font-size: 1rem;
-            color: #58594F;
-            font-style: italic;
-            line-height: 1.5;
-        }
-        
+        .pergunta { background: rgba(55,140,140,0.08); border-left:4px solid #378C8C; padding:15px; border-radius:0 10px 10px 0; margin-top:20px; }
+        .pergunta-titulo { color:#378C8C; font-weight:600; font-size:0.9rem; margin-bottom:8px; }
+        .pergunta-texto { font-size:1rem; color:#58594F; font-style:italic; line-height:1.5; }
+
         /* NAVEGAÇÃO */
-        .navegacao {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(0,0,0,0.1);
-        }
-        
-        .btn {
-            padding: 12px 20px;
-            background: #378C8C;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: all 0.2s;
-            min-height: 45px;
-        }
-        
-        .btn:active {
-            opacity: 0.8;
-            transform: scale(0.96);
-        }
-        
-        .btn-voltar {
-            background: #93BFBB;
-        }
-        
+        .navegacao { display:flex; justify-content:space-between; margin-top:25px; padding-top:20px; border-top:1px solid rgba(0,0,0,0.1); gap:10px; flex-wrap:wrap; }
+        .btn { padding:12px 20px; background:#378C8C; color:white; border:none; border-radius:10px; font-weight:600; font-size:0.95rem; display:inline-flex; align-items:center; gap:8px; text-decoration:none; transition:all .2s; min-height:45px; }
+        .btn:active { opacity:0.8; transform:scale(.96); }
+        .btn-voltar { background:#93BFBB; color:#043; }
+        .indice-mini { background:transparent; color:#378C8C; border-left: none; padding-left:0; }
+
         /* RODAPÉ */
-        .rodape {
-            background: rgba(55, 140, 140, 0.08);
-            border-radius: 15px;
-            padding: 25px 20px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        
-        .rodape h3 {
-            color: #378C8C;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-        
+        .rodape { background: rgba(55,140,140,0.08); border-radius:15px; padding:25px 20px; margin-top:30px; text-align:center; }
+        .rodape h3 { color:#378C8C; font-size:1.2rem; margin-bottom:15px; }
+
         /* BADGE */
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-left: 8px;
-        }
-        
-        .badge-seguranca {
-            background: rgba(55, 140, 140, 0.15);
-            color: #378C8C;
-        }
-        
-        .badge-ambiente {
-            background: rgba(46, 125, 95, 0.15);
-            color: #2E7D5F;
-        }
-        
-        .badge-comportamento {
-            background: rgba(212, 90, 46, 0.15);
-            color: #D45A2E;
-        }
-        
+        .badge { display:inline-block; padding:4px 10px; border-radius:15px; font-size:0.75rem; font-weight:600; margin-left:8px; }
+        .badge-seguranca { background: rgba(55,140,140,0.15); color:#378C8C; }
+        .badge-ambiente { background: rgba(46,125,95,0.15); color:#2E7D5F; }
+        .badge-comportamento { background: rgba(212,90,46,0.15); color:#D45A2E; }
+
         /* BOTÃO TOPO */
         .topo-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: #378C8C;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            text-decoration: none;
-            opacity: 0;
-            transition: opacity 0.3s;
+            position: fixed; bottom:20px; right:20px; width:50px; height:50px; background:#378C8C; color:white; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; font-size:1.2rem; box-shadow:0 3px 10px rgba(0,0,0,0.2); text-decoration:none; opacity:0; transition:opacity .3s;
         }
-        
-        .topo-btn.visible {
-            opacity: 1;
-        }
-        
+        .topo-btn.visible { opacity:1; }
+
         /* RESPONSIVO */
         @media (max-width: 768px) {
-            body {
-                padding: 8px;
-            }
-            
-            .capa h1 {
-                font-size: 1.4rem;
-            }
-            
-            .indice-item {
-                padding: 12px;
-            }
-            
-            .pagina {
-                padding: 20px 15px;
-            }
-            
-            .pagina-titulo {
-                font-size: 1.1rem;
-            }
-            
-            .btn {
-                padding: 10px 15px;
-                font-size: 0.9rem;
-            }
+            body { padding:8px; }
+            .capa h1 { font-size:1.4rem; }
+            .indice-item { padding:12px; }
+            .pagina { padding:20px 15px; }
+            .pagina-titulo { font-size:1.1rem; }
+            .btn { padding:10px 15px; font-size:0.9rem; }
         }
     </style>
 </head>
 <body>
-    <a href="#capa" class="topo-btn" id="topoBtn">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-    
+    <a href="#capa" class="topo-btn" id="topoBtn" aria-label="Subir ao topo"><i class="fas fa-arrow-up"></i></a>
+
     <div class="container">
         <!-- CAPA -->
         <section class="capa" id="capa">
-            <div class="capa-icon">
-                <i class="fas fa-hard-hat"></i>
-            </div>
-            
+            <div class="capa-icon"><i class="fas fa-hard-hat"></i></div>
             <h1>Revista DSSMA - Beneficiamento ERO Tucumã</h1>
             <p>Diálogo Diário de Saúde, Segurança e Meio Ambiente • Edição Especial de Dezembro de 2025</p>
-            
-            <p style="margin-top: 10px;">
-                <strong>Cuidar é prevenir. Trabalhar juntos é evoluir.</strong>
-            </p>
+            <p style="margin-top:10px;"><strong>Cuidar é prevenir. Trabalhar juntos é evoluir.</strong></p>
         </section>
-        
+
         <!-- ÍNDICE -->
         <section class="indice" id="indice">
             <h2><i class="fas fa-list-ol"></i> Índice Interativo</h2>
-            <p style="margin-bottom: 15px; color: #666; font-size: 0.9rem;">Toque em qualquer tópico para ler:</p>
-            
-            <div class="indice-lista">
-                <!-- ÍNDICE COMPLETO -->
-                <a href="#pagina-1" class="indice-item">
-                    <div class="indice-numero">1. Checklist: Primeiro Passo Seguro</div>
-                    <div style="font-size: 0.85rem; color: #378C8C; margin-top: 5px;">
-                        <i class="fas fa-hard-hat"></i> Segurança
-                    </div>
-                </a>
-                
-                <a href="#pagina-2" class="indice-item">
-                    <div class="indice-numero">2. Áreas de Risco: Sinalizar é Proteger</div>
-                    <div style="font-size: 0.85rem; color: #378C8C; margin-top: 5px;">
-                        <i class="fas fa-hard-hat"></i> Segurança
-                    </div>
-                </a>
-                
-                <a href="#pagina-3" class="indice-item">
-                    <div class="indice-numero">3. PGU: Trabalho Coletivo com Segurança</div>
-                    <div style="font-size: 0.85rem; color: #378C8C; margin-top: 5px;">
-                        <i class="fas fa-hard-hat"></i> Segurança
-                    </div>
-                </a>
-                
-                <a href="#pagina-4" class="indice-item">
-                    <div class="indice-numero">4. Transportadores de Correia: Atenção Total</div>
-                    <div style="font-size: 0.85rem; color: #378C8C; margin-top: 5px;">
-                        <i class="fas fa-hard-hat"></i> Segurança
-                    </div>
-                </a>
-                
-                <a href="#pagina-5" class="indice-item">
-                    <div class="indice-numero">5. Pontos de Nip: Distância é Vida</div>
-                    <div style="font-size: 0.85rem; color: #378C8C; margin-top: 5px;">
-                        <i class="fas fa-hard-hat"></i> Segurança
-                    </div>
-                </a>
-                
-                <a href="#pagina-6" class="indice-item">
-                    <div class="indice-numero">6. EPI: Seu Escudo Diário</div>
-                    <div style="font-size: 0.85rem; color: #378C8C; margin-top: 5px;">
-                        <i class="fas fa-hard-hat"></i> Segurança
-                    </div>
-                </a>
-                
-                <a href="#pagina-7" class="indice-item">
-                    <div class="indice-numero">7. Comunicação Clara, Risco Zero</div>
-                    <div style="font-size: 0.85rem; color: #378C8C; margin-top: 5px;">
-                        <i class="fas fa-hard-hat"></i> Segurança
-                    </div>
-                </a>
-                
-                <a href="#pagina-8" class="indice-item">
-                    <div class="indice-numero">8. Bloqueio que Salva</div>
-                    <div style="font-size: 0.85rem; color: #378C8C; margin-top: 5px;">
-                        <i class="fas fa-hard-hat"></i> Segurança
-                    </div>
-                </a>
-                
-                <a href="#pagina-9" class="indice-item">
-                    <div class="indice-numero">9. Teste Funcional: Última Verificação</div>
-                    <div style="font-size: 0.85rem; color: #378C8C; margin-top: 5px;">
-                        <i class="fas fa-hard-hat"></i> Segurança
-                    </div>
-                </a>
-                
-                <a href="#pagina-10" class="indice-item">
-                    <div class="indice-numero">10. Operação e Manutenção: Unidos pela Segurança</div>
-                    <div style="font-size: 0.85rem; color: #378C8C; margin-top: 5px;">
-                        <i class="fas fa-hard-hat"></i> Segurança
-                    </div>
-                </a>
-                
-                <a href="#pagina-11" class="indice-item">
-                    <div class="indice-numero">11. Limpeza e Organização: Profissionalismo em Ação</div>
-                    <div style="font-size: 0.85rem; color: #2E7D5F; margin-top: 5px;">
-                        <i class="fas fa-leaf"></i> Ambiente
-                    </div>
-                </a>
-                
-                <a href="#pagina-12" class="indice-item">
-                    <div class="indice-numero">12. Inspeções Preventivas: Pequenos Sinais</div>
-                    <div style="font-size: 0.85rem; color: #2E7D5F; margin-top: 5px;">
-                        <i class="fas fa-leaf"></i> Ambiente
-                    </div>
-                </a>
-                
-                <a href="#pagina-13" class="indice-item">
-                    <div class="indice-numero">13. Descarte Correto: Respeito Ambiental</div>
-                    <div style="font-size: 0.85rem; color: #2E7D5F; margin-top: 5px;">
-                        <i class="fas fa-leaf"></i> Ambiente
-                    </div>
-                </a>
-                
-                <a href="#pagina-14" class="indice-item">
-                    <div class="indice-numero">14. Vazamentos: Contenção Imediata</div>
-                    <div style="font-size: 0.85rem; color: #2E7D5F; margin-top: 5px;">
-                        <i class="fas fa-leaf"></i> Ambiente
-                    </div>
-                </a>
-                
-                <a href="#pagina-15" class="indice-item">
-                    <div class="indice-numero">15. Economia de Água e Energia</div>
-                    <div style="font-size: 0.85rem; color: #2E7D5F; margin-top: 5px;">
-                        <i class="fas fa-leaf"></i> Ambiente
-                    </div>
-                </a>
-                
-                <a href="#pagina-16" class="indice-item">
-                    <div class="indice-numero">16. Comunicação Não Violenta</div>
-                    <div style="font-size: 0.85rem; color: #D45A2E; margin-top: 5px;">
-                        <i class="fas fa-users"></i> Comportamento
-                    </div>
-                </a>
-                
-                <a href="#pagina-17" class="indice-item">
-                    <div class="indice-numero">17. Comportamento Inseguro: Como Agir</div>
-                    <div style="font-size: 0.85rem; color: #D45A2E; margin-top: 5px;">
-                        <i class="fas fa-users"></i> Comportamento
-                    </div>
-                </a>
-                
-                <a href="#pagina-18" class="indice-item">
-                    <div class="indice-numero">18. Liderança que Inspira</div>
-                    <div style="font-size: 0.85rem; color: #D45A2E; margin-top: 5px;">
-                        <i class="fas fa-users"></i> Comportamento
-                    </div>
-                </a>
-                
-                <a href="#pagina-19" class="indice-item">
-                    <div class="indice-numero">19. Cuidar de Si e do Colega</div>
-                    <div style="font-size: 0.85rem; color: #D45A2E; margin-top: 5px;">
-                        <i class="fas fa-users"></i> Comportamento
-                    </div>
-                </a>
-                
-                <a href="#pagina-20" class="indice-item">
-                    <div class="indice-numero">20. Saúde Mental no Trabalho</div>
-                    <div style="font-size: 0.85rem; color: #D45A2E; margin-top: 5px;">
-                        <i class="fas fa-users"></i> Comportamento
-                    </div>
-                </a>
-            </div>
-            
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="#pagina-1" class="btn" style="background: #D45A2E;">
+            <p style="margin-bottom:15px; color:#666; font-size:0.9rem;">Toque em qualquer tópico para ler:</p>
+            <div class="indice-lista" id="indiceLista"><!-- conteúdo gerado --></div>
+
+            <div style="text-align:center; margin-top:20px;">
+                <a href="#pagina-1" id="startReadingBtn" class="btn" style="background:#D45A2E;">
                     <i class="fas fa-play-circle"></i> Começar a Ler
                 </a>
             </div>
         </section>
-        
-        <!-- PÁGINAS DE CONTEÚDO -->
-        <!-- Página 1 -->
-        <section class="pagina" id="pagina-1">
-            <div class="pagina-numero">1</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-hard-hat"></i>
-                Checklist: Primeiro Passo Seguro
-                <span class="badge badge-seguranca">Segurança</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Antes de iniciar qualquer atividade, o checklist é a garantia de que tudo está em ordem. Não é só papel — é proteção. Faça com atenção, não com pressa. Quem faz por consciência cuida de todos.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Cite uma situação em que o checklist pode evitar um acidente. Compartilhe!"</div>
-            </div>
-            <div class="navegacao">
 
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
+        <!-- Onde as páginas serão inseridas -->
+        <div id="paginas"></div>
 
-
-                <div style="flex:1"></div>
-                <a href="#pagina-2" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 2 -->
-        <section class="pagina" id="pagina-2">
-            <div class="pagina-numero">2</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-hard-hat"></i>
-                Áreas de Risco: Sinalizar é Proteger
-                <span class="badge badge-seguranca">Segurança</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Placas, cones e faixas não são enfeites. São avisos que salvam vidas. Se vir uma área sem sinalização, comunique. Respeitar a sinalização é respeitar a vida.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Já identificou uma área mal sinalizada? Como agiu?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-                <a href="#pagina-1" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-3" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 3 -->
-        <section class="pagina" id="pagina-3">
-            <div class="pagina-numero">3</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-hard-hat"></i>
-                PGU: Trabalho Coletivo com Segurança
-                <span class="badge badge-seguranca">Segurança</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Na PGU, o risco aumenta. Saber o que fazer, seguir permissões de trabalho e manter o foco são essenciais. O sucesso não é só concluir o serviço — é todos voltarem para casa sem incidentes.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"O que você faz para manter o foco durante uma PGU?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-2" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-4" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 4 -->
-        <section class="pagina" id="pagina-4">
-            <div class="pagina-numero">4</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-hard-hat"></i>
-                Transportadores de Correia: Atenção Total
-                <span class="badge badge-seguranca">Segurança</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Equipamento em movimento é perigo constante. Nunca faça limpeza ou ajustes com ele ligado. Bloqueie, sinalize e só então atue. Uma vibração diferente pode ser um alerta — ouça-o.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Qual o maior risco ao operar correias? Como evitá-lo?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-3" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-5" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 5 -->
-        <section class="pagina" id="pagina-5">
-            <div class="pagina-numero">5</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-hard-hat"></i>
-                Pontos de Nip: Distância é Vida
-                <span class="badge badge-seguranca">Segurança</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Locais de esmagamento e aprisionamento exigem respeito. Nunca aproxime mãos ou ferramentas. Proteções devem estar sempre intactas. Reporte qualquer falha — um minuto pode salvar uma vida.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Como você se certifica de que as proteções estão intactas?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-4" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-6" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 6 -->
-        <section class="pagina" id="pagina-6">
-            <div class="pagina-numero">6</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-hard-hat"></i>
-                EPI: Seu Escudo Diário
-                <span class="badge badge-seguranca">Segurança</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Capacete, luvas, óculos, botas… Cada um tem uma função. Usar EPI não é só regra — é escolha de proteção. Verifique o estado, substitua se danificado. Quem se protege, cuida de quem ama.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Qual EPI já te protegeu de um incidente? Conte sua experiência."</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-5" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-7" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 7 -->
-        <section class="pagina" id="pagina-7">
-            <div class="pagina-numero">7</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-hard-hat"></i>
-                Comunicação Clara, Risco Zero
-                <span class="badge badge-seguranca">Segurança</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Entre campo e sala de controle, a comunicação deve ser clara e confirmada. Evite 'achismos'. Um dado mal passado pode gerar uma cadeia de falhas. Comunique com detalhes e confirme.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Como você garante que sua mensagem foi entendida?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-6" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-8" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 8 -->
-        <section class="pagina" id="pagina-8">
-            <div class="pagina-numero">8</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-hard-hat"></i>
-                Bloqueio que Salva
-                <span class="badge badge-seguranca">Segurança</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Nunca ignore o procedimento de bloqueio e etiquetagem. Isolar fontes de energia antes de atuar é fundamental. Pressa aqui pode custar caro. Segurança não se negocia.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Por que nunca devemos retirar um bloqueio que não é nosso?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-7" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-9" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 9 -->
-        <section class="pagina" id="pagina-9">
-            <div class="pagina-numero">9</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-hard-hat"></i>
-                Teste Funcional: Última Verificação
-                <span class="badge badge-seguranca">Segurança</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Liberar um equipamento sem teste é arriscar vidas e patrimônio. Siga o checklist pós-manutenção e valide com a equipe. Testar é prevenir.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Quem deve participar do teste funcional? Por quê?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-8" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-10" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 10 -->
-        <section class="pagina" id="pagina-10">
-            <div class="pagina-numero">10</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-hard-hat"></i>
-                Operação e Manutenção: Unidos pela Segurança
-                <span class="badge badge-seguranca">Segurança</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Trabalhar em equipe é compartilhar conhecimento. O operador conhece o comportamento do equipamento; o mantenedor entende sua estrutura. União gera segurança e eficiência.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Como melhorar a comunicação entre operação e manutenção?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-9" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-11" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 11 -->
-        <section class="pagina pagina-ambiente" id="pagina-11">
-            <div class="pagina-numero">11</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-leaf"></i>
-                Limpeza e Organização: Profissionalismo em Ação
-                <span class="badge badge-ambiente">Ambiente</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Área limpa é área segura. Antes e depois do serviço, organize ferramentas, retire sobras e comunique. Organização reflete respeito pelo trabalho e pelos colegas.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Como a desorganização pode causar um acidente?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-10" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-12" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 12 -->
-        <section class="pagina pagina-ambiente" id="pagina-12">
-            <div class="pagina-numero">12</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-leaf"></i>
-                Inspeções Preventivas: Pequenos Sinais
-                <span class="badge badge-ambiente">Ambiente</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Ruídos, vibrações, vazamentos… O equipamento fala. Ouvi-lo pode evitar paradas e acidentes. Registrar anomalias é cuidar do amanhã.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Qual foi a última anomalia que você identificou e comunicou?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-11" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-13" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 13 -->
-        <section class="pagina pagina-ambiente" id="pagina-13">
-            <div class="pagina-numero">13</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-leaf"></i>
-                Descarte Correto: Respeito Ambiental
-                <span class="badge badge-ambiente">Ambiente</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Óleos, panos contaminados e filtros têm destino certo. Descarte no local adequado e ajude a preservar o meio ambiente. Sustentabilidade é responsabilidade de todos.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"O que acontece se descartarmos resíduos oleosos no local errado?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-12" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-14" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 14 -->
-        <section class="pagina pagina-ambiente" id="pagina-14">
-            <div class="pagina-numero">14</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-leaf"></i>
-                Vazamentos: Contenção Imediata
-                <span class="badge badge-ambiente">Ambiente</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Um vazamento mínimo hoje pode virar um desastre amanhã. Identifique, comunique e contenha. Cada um de nós é guardião da segurança ambiental.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Você sabe onde estão os kits de contenção? Já precisou usar?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-13" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-15" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 15 -->
-        <section class="pagina pagina-ambiente" id="pagina-15">
-            <div class="pagina-numero">15</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-leaf"></i>
-                Economia de Água e Energia
-                <span class="badge badge-ambiente">Ambiente</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Na mineração, água é recurso precioso. Evite desperdícios, feche válvulas, reporte falhas. Pequenos gestos geram grandes impactos.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Como podemos reduzir o consumo de água no nosso setor?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-14" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-16" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 16 -->
-        <section class="pagina pagina-comportamento" id="pagina-16">
-            <div class="pagina-numero">16</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-users"></i>
-                Comunicação Não Violenta
-                <span class="badge badge-comportamento">Comportamento</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Falar com respeito, ouvir com atenção e construir pontes em vez de muros. Um ambiente saudável é um ambiente seguro. Cuidar das palavras é cuidar das pessoas.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Como você lida com um conflito no trabalho?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-15" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-17" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 17 -->
-        <section class="pagina pagina-comportamento" id="pagina-17">
-            <div class="pagina-numero">17</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-users"></i>
-                Comportamento Inseguro: Como Agir
-                <span class="badge badge-comportamento">Comportamento</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Ver algo errado e não agir é compactuar com o risco. Aborde com respeito, explique o porquê. Segurança é responsabilidade coletiva.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Como você corrige um colega sem criar conflito?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-16" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-18" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 18 -->
-        <section class="pagina pagina-comportamento" id="pagina-18">
-            <div class="pagina-numero">18</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-users"></i>
-                Liderança que Inspira
-                <span class="badge badge-comportamento">Comportamento</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Líder é exemplo. Cumprir procedimentos, usar EPI e respeitar normas inspira a equipe. Coerência entre o que se fala e o que se faz constrói cultura.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Qual atitude de um líder já te motivou a trabalhar com mais segurança?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-17" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-19" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 19 -->
-        <section class="pagina pagina-comportamento" id="pagina-19">
-            <div class="pagina-numero">19</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-users"></i>
-                Cuidar de Si e do Colega
-                <span class="badge badge-comportamento">Comportamento</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Na mineração, ninguém trabalha sozinho. Observar, ajudar e corrigir com respeito são atitudes que fortalecem a segurança coletiva.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"Quando um colega te alertou sobre um risco, como você reagiu?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-18" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#pagina-20" class="btn">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Página 20 -->
-        <section class="pagina pagina-comportamento" id="pagina-20">
-            <div class="pagina-numero">20</div>
-            <h2 class="pagina-titulo">
-                <i class="fas fa-users"></i>
-                Saúde Mental no Trabalho
-                <span class="badge badge-comportamento">Comportamento</span>
-            </h2>
-            <div class="pagina-conteudo">
-                Cansaço, estresse e pressão afetam a segurança. Descanse, cuide dos hábitos e converse quando precisar. Mente saudável, operação segura.
-            </div>
-            <div class="pergunta">
-                <div class="pergunta-titulo">
-                    <i class="fas fa-question-circle"></i>
-                    PARA REFLEXÃO NO DSSMA
-                </div>
-                <div class="pergunta-texto">"O que você faz para aliviar o estresse no trabalho?"</div>
-            </div>
-            <div class="navegacao">
-
-		<a href="#indice" class="btn btn-voltar">
-        	<i class="fas fa-list"></i> Índice
-    		</a>
-
-
-                <a href="#pagina-19" class="btn btn-voltar">
-                    <i class="fas fa-arrow-left"></i> Anterior
-                </a>
-                <a href="#rodape" class="btn" style="background: #2E7D5F;">
-                    Finalizar <i class="fas fa-check"></i>
-                </a>
-            </div>
-        </section>
-        
         <!-- RODAPÉ -->
         <section class="rodape" id="rodape">
             <h3>Nossa segurança é construída todo dia, por cada um de nós.</h3>
-            <p style="margin: 15px 0; color: #555;">
-                Comunique, previna, cuide-se e cuide do próximo.
-            </p>
-            
-            <div style="margin: 20px 0; color: #378C8C; font-weight: 700; font-size: 1.1rem;">
-                PENSE SEGURO. AJA SEGURO. VOLTE SEGURO.
-            </div>
-            
-            <a href="#capa" class="btn" style="background: #93BFBB;">
+            <p style="margin:15px 0; color:#555;">Comunique, previna, cuide-se e cuide do próximo.</p>
+            <div style="margin:20px 0; color:#378C8C; font-weight:700; font-size:1.1rem;">PENSE SEGURO. AJA SEGURO. VOLTE SEGURO.</div>
+
+            <a href="#capa" class="btn" style="background:#93BFBB;">
                 <i class="fas fa-home"></i> Voltar ao Início
             </a>
-            
-            <div style="margin-top: 25px; font-size: 0.8rem; color: #666; line-height: 1.5;">
+
+            <div style="margin-top:25px; font-size:0.8rem; color:#666; line-height:1.5;">
                 <p>Revista DSSMA Digital • Use como guia para seus Diálogos Diários de Saúde, Segurança e Meio Ambiente</p>
                 <p>Idealizado por Aline Suene - aline.andrade@erobr.com</p>
                 <p>Criado e editado por Alexandre Oliveira</p>
@@ -1187,42 +133,112 @@
             </div>
         </section>
     </div>
-    
+
     <script>
-        // Código mínimo e seguro para iOS
-        (function() {
-            'use strict';
-            
-            // Controlar botão de voltar ao topo
-            window.addEventListener('scroll', function() {
-                var topoBtn = document.getElementById('topoBtn');
-                if (window.scrollY > 300) {
-                    topoBtn.classList.add('visible');
-                } else {
-                    topoBtn.classList.remove('visible');
-                }
+    (function(){
+        'use strict';
+
+        const topoBtn = document.getElementById('topoBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) topoBtn.classList.add('visible'); else topoBtn.classList.remove('visible');
+        });
+
+        // Suavizar scroll para âncoras (delegado)
+        document.addEventListener('click', function(e){
+            const a = e.target.closest('a[href^="#"]');
+            if (!a) return;
+            const href = a.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
+            }
+        });
+
+        // Carregar temas do JSON e gerar índice + páginas
+        async function carregarTemas() {
+            try {
+                const res = await fetch('temas.json', { cache: "no-store" });
+                if (!res.ok) throw new Error('Não foi possível carregar temas.json: ' + res.status);
+                const temas = await res.json();
+
+                gerarIndice(temas);
+                gerarPaginas(temas);
+            } catch (err) {
+                console.error(err);
+                const container = document.getElementById('paginas');
+                container.innerHTML = '<div style="background:#ffecec;border:1px solid #f5c6cb;padding:20px;border-radius:10px;">Erro ao carregar <strong>temas.json</strong>. Verifique se o arquivo existe na mesma pasta e se está sendo servido por um servidor (fetch pode falhar ao abrir o arquivo diretamente no sistema de arquivos). Mensagem: ' + err.message + '</div>';
+            }
+        }
+
+        function gerarIndice(temas) {
+            const indiceLista = document.getElementById('indiceLista');
+            indiceLista.innerHTML = temas.map(t => `
+                <a href="#pagina-${t.id}" class="indice-item">
+                    <div class="indice-numero">${t.id}. ${t.titulo}</div>
+                    <div style="font-size:0.85rem; color:${categoriaCor(t.categoria)}; margin-top:5px;">
+                        <i class="${t.icone}"></i> ${t.categoria}
+                    </div>
+                </a>
+            `).join('');
+            // Ajusta botão começar a ler para o primeiro tema existente
+            const startBtn = document.getElementById('startReadingBtn');
+            if (temas.length) startBtn.setAttribute('href', '#pagina-' + temas[0].id);
+        }
+
+        function gerarPaginas(temas) {
+            const paginas = document.getElementById('paginas');
+            let html = '';
+            temas.forEach((t, i) => {
+                const classePagina = t.categoria.toLowerCase().includes('ambiente') ? 'pagina pagina-ambiente' :
+                                     t.categoria.toLowerCase().includes('comport') ? 'pagina pagina-comportamento' : 'pagina';
+                html += `
+                <section class="${classePagina}" id="pagina-${t.id}">
+                    <div class="pagina-numero">${t.id}</div>
+                    <h2 class="pagina-titulo">
+                        <i class="${t.icone}"></i>
+                        ${t.titulo}
+                        <span class="badge ${t.badgeClass}">${t.categoria}</span>
+                    </h2>
+                    <div class="pagina-conteudo">${t.conteudo}</div>
+
+                    <div class="pergunta">
+                        <div class="pergunta-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            PARA REFLEXÃO NO DSSMA
+                        </div>
+                        <div class="pergunta-texto">"${t.pergunta}"</div>
+                    </div>
+
+                    <div class="navegacao">
+                        ${ i > 0 ? `<a href="#pagina-${temas[i-1].id}" class="btn btn-voltar"><i class="fas fa-arrow-left"></i> Anterior</a>` : `<div></div>` }
+                        ${ i < temas.length - 1 ? `<a href="#pagina-${temas[i+1].id}" class="btn">Próximo <i class="fas fa-arrow-right"></i></a>` : `<div></div>` }
+                    </div>
+
+                    <div style="text-align:center; margin-top:15px;">
+                        <a href="#indice" class="btn btn-voltar"><i class="fas fa-list"></i> Índice</a>
+                    </div>
+                </section>
+                `;
             });
-            
-            // Suavizar scroll para âncoras
-            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-                anchor.addEventListener('click', function(e) {
-                    var targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    var targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        e.preventDefault();
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 20,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Log simples para debug
-            console.log('Revista DSSMA carregada com sucesso');
-        })();
+            paginas.innerHTML = html;
+        }
+
+        function categoriaCor(cat) {
+            if (!cat) return '#378C8C';
+            const c = cat.toLowerCase();
+            if (c.includes('ambiente')) return '#2E7D5F';
+            if (c.includes('comport')) return '#D45A2E';
+            return '#378C8C';
+        }
+
+        // Inicializa
+        carregarTemas();
+
+        // Debug simples
+        console.log('Revista DSSMA carregada (modo dinâmico com temas.json)');
+    })();
     </script>
 </body>
 </html>
